@@ -1,2 +1,2 @@
 # BorgRubiksCube
-Placeholder
+React and TypeScypt
