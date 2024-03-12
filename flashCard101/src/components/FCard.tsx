@@ -1,26 +1,32 @@
 import Flashcard from "../models/Flashcard";
 import { useState } from "react";
 
-// export default function FCard({ flashcard }: { flashcard: Flashcard }) {
-//     const [showAnswer, setShowAnswer] = useState(false);
+interface Props {
+    flashcard: Flashcard;
+}
 
-//     return (
-//         <div>
-//             <div>
-//                 <h2>{flashcard.question}</h2>
-//                 <button onClick={() => setShowAnswer(!showAnswer)}>Show Answer</button>
-//             </div>
-//             {showAnswer && <div>{flashcard.answer}</div>}
-//         </div>
-//     );
-// }
+const Card = ({ flashcard }: Props) => {
+    const [flip, setFlip] = useState(false);
+
+    // Click handler when user clicks on card to flip it
+    const handleClick = (e: any) => {
+        setFlip(!flip);
+    };
+
+};
+
 
 export default function FCard({ flashcard }: { flashcard: Flashcard }) {
     const [flip, setFlip] = useState(false);
-    <div>
+    <div className={'card ${flip ? "flip" : ""}'}>
+        <div className="front" onClick={() => setFlip(!flip)}>
+        </div>
+        <div className="back" onClick={() => setFlip(!flip)}>
+
+        </div>
         <div>
 
-{flip ? flashcard.answer : flashcard.question}
+{/* {flip ? flashcard.answer : flashcard.question} */}
 
         </div>
 
